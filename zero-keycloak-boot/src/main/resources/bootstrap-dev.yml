@@ -1,0 +1,25 @@
+spring:
+    application:
+        name: zero-keycloak-boot
+    security:
+        oauth2:
+            client:
+                provider:
+                    external:
+                        issuer-uri: http://localhost:8080/realms/myrealm
+                registration:
+                    external:
+                        authorization-grant-type: authorization_code
+                        client-id: myclient
+                        client-name: myclient
+                        client-secret: U8H2yI5Fph7NpHEjHoNzwXbb63leKbqf
+                        provider: external
+                        scope: openid,offline_access,profile
+logging:
+    level:
+        org:
+            springframework:
+                security: INFO
+    pattern:
+        console: '%d{dd-MM-yyyy HH:mm:ss} %magenta([%thread]) %highlight(%-5level)
+            %logger.%M - %msg%n'
